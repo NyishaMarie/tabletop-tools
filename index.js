@@ -6,6 +6,7 @@
  * @returns {boolean} whether the wizard can cast the spell
  */
 function canCastSpell(isSpellPrepared, hasScroll) {
+  return isSpellPrepared || hasScroll;
   // TODO
 }
 
@@ -17,6 +18,7 @@ function canCastSpell(isSpellPrepared, hasScroll) {
  * @returns {boolean} whether the creature is hidden from the observer
  */
 function isHidden(hiding, aware) {
+ 
   // TODO
 }
 
@@ -28,6 +30,7 @@ function isHidden(hiding, aware) {
  * @returns {boolean} whether the strike hits
  */
 function doesStrikeHit(attack, ac) {
+
   // TODO
 }
 
@@ -39,6 +42,7 @@ function doesStrikeHit(attack, ac) {
  * @returns {boolean} whether the strike is a critical hit
  */
 function doesStrikeCrit(attack, ac) {
+ 
   // TODO
 }
 
@@ -51,6 +55,7 @@ function doesStrikeCrit(attack, ac) {
  * @returns {number} total hit points after healing
  */
 function heal(maxHp, currentHp, healAmount) {
+ 
   // TODO
 }
 
