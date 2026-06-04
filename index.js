@@ -140,6 +140,13 @@ function getCoverBonus(behindObstacle, takingCover) {
  * @returns {number} the creature's remaining HP after taking damage
  */
 function getRemainingHp(maxHp, currentHp, damage) {
+  if (damage > maxHp * 2) {
+    return -1;  
+  } else if (hp <= 0) {
+    return 0;
+  } else {
+    return hp;
+  }
   // TODO
 }
 
@@ -152,6 +159,15 @@ function getRemainingHp(maxHp, currentHp, damage) {
  * @returns {boolean} whether the creature can see
  */
 function canSee(light, vision) {
+  if (light === "bright") {
+    return true;
+  } else if (light === "dim") {
+    return vision === "low-light" || vision === "dark";
+  } else if (light === "dark") { 
+    return vision === "dark";
+  } else {
+    return false;
+  }
   // TODO
 }
 
@@ -166,5 +182,10 @@ function canSee(light, vision) {
  * @returns {number} damage dealt by the strike
  */
 function getStrikeDamage(attack, ac, damage) {
+  if (!doesStrikeCrit(attack, ac)) {
+    return 0;
+  }
+
+  return doesStrikeCrit(attack, ac) ? 2 * damage : damage;
   // TODO
 }
